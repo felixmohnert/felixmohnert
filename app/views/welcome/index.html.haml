@@ -1,0 +1,179 @@
+%body
+  / Side Menu
+  %a#menu-toggle.btn.btn-danger.btn-lg.toggle{href: "#"}
+    %i.icon-reorder
+  #sidebar-wrapper
+    %ul.sidebar-nav
+      %a#menu-close.btn.btn-default.btn-lg.pull-right.toggle{href: "#"}
+        %i.icon-remove
+      %li.sidebar-brand
+        = link_to 'Felix Mohnert', root_path
+      %li
+        = link_to 'Home', '#top'
+      %li
+        %a{href: "#intro"} About
+      %li
+        %a{href: "#services"} Knowledge
+      %li
+        %a{href: "#portfolio"} What I do
+      %li
+        %a{href: "#contact"} Contact
+  / /Side Menu
+  / Full Page Image Header Area
+  #top.header
+    .vert-text
+      %h1 Felix Mohnert
+      %h3
+        %em I am
+        web developer – Mainly focused on Ruby on Rails
+      %a.btn.btn-default.btn-lg{href: "#intro"} About
+  / /Full Page Image Header Area
+  / Intro
+  #intro.intro
+    .container
+      .row
+        .col-md-6.col-md-offset-3.text-center
+          %h2 About Felix Mohnert
+          %p.lead
+            After finishing my study of Business Administration at
+            = link_to 'Freie Universität Berlin', 'http://www.fu-berlin.de', target: 'blank'
+            I decided to say goodbye to Excel and start using
+            = link_to 'Sublime.', 'http://www.sublimetext.com', target: 'blank'
+          %p.lead
+            The coding began. Since then I got familial with Ruby and Rails, Sass, Haml, Heroku, Git and Github, Product Managament and right now to Javascript / Coffeescript.
+
+  / /Intro
+  / Services
+  #services.services
+    .container
+      .row
+        .col-md-4.col-md-offset-4.text-center
+          %h2 Knowledge in Detail
+          %hr/
+      .row
+        .col-md-2.col-md-offset-2.text-center
+          .service-item
+            %i.service-icon.icon-code
+            %h4 Front-End
+            %p Front-end development with Haml, Sass, Bootstrap, Compass and creating own layouts.
+        .col-md-2.text-center
+          .service-item
+            %i.service-icon.icon-cogs
+            %h4 Back-End
+            %p Engineering for many different apps and systems.
+        .col-md-2.text-center
+          .service-item
+            %i.service-icon.icon-lightbulb
+            %h4 Product Mgmt
+            %p Planning own projects with other departments and implementing them. Ship it.
+        .col-md-2.text-center
+          .service-item
+            %i.service-icon.icon-money
+            %h4 Business Adm.
+            %p Academic background in business administration and work experience in marketing.
+  / /Services
+  / Callout
+  .callout
+    .vert-text
+      %h1 Want to know more?
+  / /Callout
+  / Portfolio
+  #portfolio.portfolio
+    .container
+      .row
+        .col-md-4.col-md-offset-4.text-center
+          %h2 What I do
+          %hr/
+      .row
+        .col-md-4.col-md-offset-2.text-center
+          .portfolio-item
+            = link_to('https://github.com/felixmohnert/rowing-machine', target: 'blank') do
+              %input.dial{type: "text", value: "15", "data-readonly" => "true"}/
+            %h3 Rowing Machine
+        .col-md-4.text-center
+          .portfolio-item
+            %input.dial{type: "text", value: "25", "data-readonly" => "true"}/
+            %h3 Learning Javascript
+      .row
+        .col-md-4.col-md-offset-2.text-center
+          .portfolio-item
+            %input.dial{type: "text", value: "0", "data-readonly" => "true"}/
+            %h3 Learning Coffeescript
+        .col-md-4.text-center
+          .portfolio-item
+            %input.dial{type: "text", value: "35", "data-readonly" => "true"}/
+            %h3 Reading "Pragmatic Programmer"
+
+  / /Portfolio
+  / Call to Action
+  .call-to-action
+    .container
+      .row
+        .col-md-6.col-md-offset-3.text-center
+          %h3 The buttons below are impossible to resist.
+          %a.btn.btn-lg.btn-default{href: "#top"} Click Me!
+          %a.btn.btn-lg.btn-primary{href: "#top"} Look at Me!
+  / /Call to Action
+  / Footer
+
+#contact.map
+  %iframe{frameborder: "0", height: "100%", marginheight: "0", marginwidth: "0", scrolling: "no", src: "http://maps.google.com/maps?f=q&source=s_q&hl=en&geocode=&q=Turmstr.%2B49%2B10551%2BBerlin(Felix+Mohnert)&ie=UTF8&z=13&t=m&iwloc=near&output=embed", width: "100%"}
+
+  %footer
+    .container
+      .row
+        .col-md-6.col-md-offset-3.text-center
+          %ul.list-inline
+            %li
+              = link_to('https://www.facebook.com/felix.mohnert') do
+                %i.icon-facebook.icon-2x
+            %li
+              = link_to('https://twitter.com/felixmohnert') do
+                %i.icon-twitter.icon-2x
+            %li
+              = link_to('https://github.com/felixmohnert') do
+                %i.icon-github.icon-2x
+          .top-scroll
+            %a{href: "#top"}
+              %i.icon-circle-arrow-up.scroll.icon-4x
+          %hr/
+          %p
+            Copyright ©
+            = link_to 'Felix Mohnert', 'mailto:felix@mohnert.de'
+            = Time.zone.now.year
+
+  / /Footer
+  / Custom JavaScript for the Side Menu - Put in a custom JS file if you want to clean this up
+
+  :javascript
+    $("#menu-close").click(function(e) {
+        e.preventDefault();
+        $("#sidebar-wrapper").toggleClass("active");
+    });
+  :javascript
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#sidebar-wrapper").toggleClass("active");
+    });
+  :javascript
+    $(function() {
+        $('a[href*=#]:not([href=#])').click(function() {
+          if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'')
+              || location.hostname == this.hostname) {
+
+            var target = $(this.hash);
+            target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+            if (target.length) {
+              $('html,body').animate({
+                scrollTop: target.offset().top
+              }, 1000);
+              return false;
+            }
+          }
+        });
+      });
+
+  :javascript
+    $(function() {
+        $(".dial").knob();
+    });

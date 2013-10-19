@@ -1,0 +1,33 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: felixmohnert_development
+  pool: 5
+  username: felixmohnert
+  password:
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: felixmohnert_test
+  min_messages: WARNING
+  pool: 5
+  username: felixmohnert
+  password:
+
+staging:
+  adapter: postgresql
+  encoding: unicode
+  database: felixmohnert_development
+  min_messages: WARNING
+  pool: 5
+  username: felixmohnert
+  password:
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: felixmohnert_development
+  pool: 5
+  username: felixmohnert
+  password:
