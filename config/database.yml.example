@@ -3,7 +3,7 @@ development:
   encoding: unicode
   database: felixmohnert_development
   pool: 5
-  username: your_username
+  username: felixmohnert
   password:
 
 test:
@@ -12,7 +12,7 @@ test:
   database: felixmohnert_test
   min_messages: WARNING
   pool: 5
-  username: your_username
+  username: felixmohnert
   password:
 
 staging:
@@ -21,7 +21,7 @@ staging:
   database: felixmohnert_development
   min_messages: WARNING
   pool: 5
-  username: your_username
+  username: felixmohnert
   password:
 
 production:
@@ -29,5 +29,5 @@ production:
   encoding: unicode
   database: felixmohnert_development
   pool: 5
-  username: your_username
+  username: felixmohnert
   password:
