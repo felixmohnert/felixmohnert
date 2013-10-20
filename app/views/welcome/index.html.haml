@@ -25,7 +25,7 @@
       %h1 Felix Mohnert
       %h3
         %em I am
-        a web developer – mainly focused on ruby on rails
+        a web developer – mainly focused on Ruby on Rails
       %a.btn.btn-default.btn-lg{href: "#intro"} About
   / /Full Page Image Header Area
   / Intro
@@ -35,12 +35,19 @@
         .col-md-6.col-md-offset-3.text-center
           %h2 About Felix Mohnert
           %p.lead
-            After I finished my study of Business Administration at
+            After I had finished my degree in Business Administration at
             = link_to 'Freie Universität Berlin', 'http://www.fu-berlin.de', target: 'blank'
             I decided to say goodbye to Excel and start using
             = link_to 'Sublime.', 'http://www.sublimetext.com', target: 'blank'
           %p.lead
-            So the coding began. Since then I got familial with Ruby and Rails, Sass, Haml, Heroku, Git and Github, Product Managament and right now to Javascript / Coffeescript.
+            So the coding began. Since then I got familiar with Ruby and Rails, Sass, Haml, Heroku, Git and Github, Product Managament and right now also Javascript / Coffeescript.
+
+  #twitter.twitter
+    .container
+      .row
+        .col-md-12.text-center
+          %h2 Tweets
+          %a.twitter-timeline{"data-dnt" => "true", "data-widget-id" => "362185207513772032", href: "https://twitter.com/felixmohnert"} Tweets von @felixmohnert
 
   / /Intro
   / Services
@@ -142,8 +149,6 @@
             = link_to 'Felix Mohnert', 'mailto:felix@mohnert.de'
             = Time.zone.now.year
 
-
-
   / /Footer
   / Custom JavaScript for the Side Menu - Put in a custom JS file if you want to clean this up
 
@@ -206,3 +211,6 @@
     $(function() {
         $(".dial").knob();
     });
+
+  :javascript
+    !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
