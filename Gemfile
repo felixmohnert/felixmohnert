@@ -24,8 +24,9 @@ gem 'coffee-rails', '~> 4.0.0'
 
 #Use Bootstrap 3
 gem 'bootstrap-sass', :git => 'git://github.com/thomas-mcdonald/bootstrap-sass.git'
-# Use jquery as the JavaScript library
+# Use jquery and angularjs as the JavaScript library
 gem 'jquery-rails'
+gem 'angularjs-rails', '>= 1.2.0.rc2'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
