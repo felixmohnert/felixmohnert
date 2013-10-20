@@ -88,20 +88,20 @@
         .col-md-4.col-md-offset-2.text-center
           .portfolio-item
             = link_to('https://github.com/felixmohnert/rowing-machine', target: 'blank') do
-              %input.dial{type: "text", value: "15", "data-readonly" => "true"}/
+              %input.dial.dial-1{type: "text", value: "0", rel: "15", "data-readonly" => "true"}/
             %h3 Rowing Machine
         .col-md-4.text-center
           .portfolio-item
-            %input.dial{type: "text", value: "25", "data-readonly" => "true"}/
+            %input.dial.dial-2{type: "text", value: "0", rel: "25", "data-readonly" => "true"}/
             %h3 Learning Javascript
       .row
         .col-md-4.col-md-offset-2.text-center
           .portfolio-item
-            %input.dial{type: "text", value: "0", "data-readonly" => "true"}/
+            %input.dial.dial-3{type: "text", value: "0", rel: "0", "data-readonly" => "true"}/
             %h3 Learning Coffeescript
         .col-md-4.text-center
           .portfolio-item
-            %input.dial{type: "text", value: "35", "data-readonly" => "true"}/
+            %input.dial.dial-4{type: "text", value: "0", rel: "35", "data-readonly" => "true"}/
             %h3 Reading "Pragmatic Programmer"
 
   / /Portfolio
@@ -149,7 +149,29 @@
 
   :javascript
     $('#services').waypoint(function() {
-      $('.service-item').addClass('animated flip');
+      $('.service-icon').addClass('animated flip');
+    });
+
+  :javascript
+    $('#portfolio').waypoint(function() {
+      $('.dial').each(function () {
+         var $this = $(this);
+         var myVal = $this.attr("rel");
+         $this.dial({
+         });
+
+         $({
+             value: 0
+         }).animate({
+             value: myVal
+         }, {
+             duration: 1000,
+             easing: 'swing',
+             step: function () {
+                 $this.val(Math.ceil(this.value)).trigger('change');
+             }
+         })
+      })
     });
 
   :javascript
