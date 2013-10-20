@@ -22,6 +22,11 @@ gem 'coffee-rails', '~> 4.0.0'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
+# Forms, mail {
+gem 'mail_form', '~> 1.5.0'
+gem 'simple_form', '~> 3.0.0'
+
+
 #Use Bootstrap 3
 gem 'bootstrap-sass', :git => 'git://github.com/thomas-mcdonald/bootstrap-sass.git'
 # Use jquery and angularjs as the JavaScript library
@@ -46,6 +51,15 @@ end
 group :development, :test do
   gem "rspec-rails"
   gem 'guard-rspec'
+end
+
+group :development do
+  gem 'quiet_assets'
+  gem 'better_errors'
+  gem 'guard-rails'
+  gem 'guard-livereload'
+  gem 'rack-livereload'
+  gem 'guard-bundler'
 end
 
 group :test do
