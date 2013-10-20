@@ -142,8 +142,15 @@
             = link_to 'Felix Mohnert', 'mailto:felix@mohnert.de'
             = Time.zone.now.year
 
+
+
   / /Footer
   / Custom JavaScript for the Side Menu - Put in a custom JS file if you want to clean this up
+
+  :javascript
+    $('#services').waypoint(function() {
+      $('.service-item').addClass('animated flip');
+    });
 
   :javascript
     $("#menu-close").click(function(e) {
