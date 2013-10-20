@@ -1,7 +1,9 @@
 Felixmohnert::Application.routes.draw do
   get "post/index"
   get "post/show"
-  get "welcome/index"
+
+  resources "contacts", only: [:new, :create]
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
