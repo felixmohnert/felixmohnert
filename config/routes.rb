@@ -1,4 +1,6 @@
 Felixmohnert::Application.routes.draw do
+  resources :posts
+
   get "post/index"
   get "post/show"
 
