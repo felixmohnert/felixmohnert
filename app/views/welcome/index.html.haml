@@ -212,11 +212,13 @@
     $("#menu-close").click(function(e) {
         e.preventDefault();
         $("#sidebar-wrapper").toggleClass("active");
+        $('#menu-toggle').removeClass('hidden');
     });
   :javascript
     $("#menu-toggle").click(function(e) {
         e.preventDefault();
         $("#sidebar-wrapper").toggleClass("active");
+        $('#menu-toggle').addClass('hidden');
     });
   :javascript
     $(function() {
