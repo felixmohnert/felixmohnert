@@ -1,11 +1,12 @@
 [![Build Status](https://travis-ci.org/felixmohnert/felixmohnert.png)](https://travis-ci.org/felixmohnert/felixmohnert) [![Code Climate](https://codeclimate.com/github/felixmohnert/felixmohnert.png)](https://codeclimate.com/github/felixmohnert/felixmohnert)
 
-== Info to and from felixmohnert
+Portfolio
+=========
 
 This is my personal portfolio app. If you feel inspired and use it for your own purposes.
 Special thanks to https://github.com/IronSummitMedia for the awesome template.
 
-Build with:
+Built with:
 
 * Ruby 2.0
 
